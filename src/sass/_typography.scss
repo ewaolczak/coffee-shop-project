@@ -1,13 +1,38 @@
-h1 {
-  font-size: $base-size * 5;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: $font-bold;
   text-transform: uppercase;
-  letter-spacing: $base-size * 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: $base-size * 5;
+  letter-spacing: $base-size * 2;
+  color: $color-main;
 }
 
 h2 {
   font-size: $base-size * 4;
-  font-weight: $font-bold;
-  text-transform: uppercase;
   letter-spacing: $base-size;
+  color: $color-main;
+}
+
+h3 {
+  color: $color-dark;
+}
+
+h4 {
+  color: $color-light;
+  letter-spacing: $base-size * 0.75;
+  font-size: $base-size * 2;
+}
+h5 {
+  color: $color-light;
+  letter-spacing: $base-size * 0.3;
+  font-size: $base-size;
 }
