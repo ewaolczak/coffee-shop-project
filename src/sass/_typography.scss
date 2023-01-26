@@ -4,15 +4,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $font-bold;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  font-size: $base-size * 5;
-  letter-spacing: $base-size * 2;
+  font-size: $base-size * 7;
+  letter-spacing: $base-size;
   color: $color-main;
 }
 
@@ -20,6 +19,9 @@ h2 {
   font-size: $base-size * 4;
   letter-spacing: $base-size;
   color: $color-main;
+  margin-top: 50px;
+  text-align: center;
+  font-weight: $font-bold;
 }
 
 h3 {
@@ -29,10 +31,12 @@ h3 {
 h4 {
   color: $color-light;
   letter-spacing: $base-size * 0.75;
-  font-size: $base-size * 2;
+  font-size: $base-size * 3;
+  font-weight: $font-bold;
 }
+
 h5 {
   color: $color-light;
   letter-spacing: $base-size * 0.3;
-  font-size: $base-size;
+  font-size: $base-size * 1.5;
 }

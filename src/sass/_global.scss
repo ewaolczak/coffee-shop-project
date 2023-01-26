@@ -1,10 +1,13 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: $font-family;
 }
 
-.container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
