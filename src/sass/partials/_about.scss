@@ -1,0 +1,21 @@
+.about {
+  height: 90vh;
+  .bg-image {
+    background: url(../../images/about-us.jpg);
+    height: 90vh;
+    position: absolute;
+  }
+
+  p {
+    color: $color-light;
+    font-size: $base-size * 2.5;
+    font-style: italic;
+    padding-right: $base-size * 3;
+    letter-spacing: 1px;
+  }
+
+  p:last-child {
+    text-align: right;
+    padding-right: 0;
+  }
+}

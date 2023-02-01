@@ -1,16 +1,10 @@
 header {
   position: relative;
   font-family: $font-family;
-}
 
-.bg-image {
-  position: absolute;
-  background: url(../../images/background.png);
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  filter: brightness(40%);
-  z-index: -1;
+  .bg-image {
+    background: url(../../images/background.png);
+  }
 }
 
 .nav-logo {
@@ -48,7 +42,6 @@ header {
 }
 
 .main-title {
-
   h1 {
     font-weight: $font-bold;
   }

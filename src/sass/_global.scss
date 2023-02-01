@@ -11,3 +11,11 @@ body {
   font-family: $font-family;
 }
 
+.bg-image {
+  position: absolute;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  filter: brightness(30%);
+  z-index: -1;
+}
