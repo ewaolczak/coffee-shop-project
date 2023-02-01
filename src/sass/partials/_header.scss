@@ -43,8 +43,11 @@ header {
   }
 }
 
+.header_grid {
+  height: 100vh;
+}
+
 .main-title {
-  margin: 15vw 0;
 
   h1 {
     font-weight: $font-bold;

@@ -38,6 +38,8 @@ const app = {
       const productObject = {
         name: product.name,
         description: product.description,
+        roasting: product.roasting,
+        intensity: product.intensity,
         image: product.image,
       };
       const html = templates.products(productObject);
