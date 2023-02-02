@@ -9,7 +9,7 @@ export const select = {
     about: '#about',
     contact: '#contact',
     footer: '#footer',
-    linksToPages: '#home, "products, #contact',
+    linksToPages: '.nav-links a',
     mainPages: '#products, #contact',
     links: 'nav-links',
   },
