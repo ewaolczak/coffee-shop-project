@@ -15,15 +15,6 @@ const app = {
     const rawResponse = await fetch(url);
     const jsonResponse = await rawResponse.json();
     this.data.products = jsonResponse;
-
-    // .then((rawResponse) => {
-    //   return rawResponse.json();
-    // })
-    // .then((parsedResponse) => {
-    //   console.log('parsedResponse', parsedResponse);
-    //   this.data.products = parsedResponse;
-    //   return;
-    // });
   },
 
   getElement() {

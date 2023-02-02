@@ -21,7 +21,7 @@
 </head>
 
 <body>
-  <header class="header">
+  <header id="home" class="header">
     <div class="bg-image"></div>
     <div class="container">
       <div class="row justify-content-center">
@@ -34,11 +34,11 @@
             </div>
             <div class="nav-links">
               <ul>
-                <li><a href="#home" class="nav-link-home">Home</a></li>
+                <li><a href="#home" class="nav-links nav-link-home">Home</a></li>
                 <li>
-                  <a href="#products" class="nav-link-products">Products</a>
+                  <a href="#products" class="nav-links nav-link-products">Products</a>
                 </li>
-                <li><a href="#contact" class="nav-link-contact">Contact</a></li>
+                <li><a href="#contact" class="nav-links nav-link-contact">Contact</a></li>
               </ul>
             </div>
           </nav>
@@ -64,7 +64,7 @@
     <div id="products" class="products-list pt-5 pb-5"></div>
   </main>
 
-  <section class="about">
+  <section id="about" class="about">
     <div class="bg-image"></div>
     <div>
       <h2 class="subtitle pt-5">about us</h2>
@@ -84,7 +84,25 @@
     </div>
   </section>
 
-  <footer class="pt-4 pb-4 container">
+<section id="contact">
+  <row class="container">
+    <div class="col col-md-5 ms-auto me-auto">
+      <h2 class="subtitle mt-5">contact</h2>
+      <hr class="main-hr">
+      <form>
+        <label for="name">Name</label>
+        <input id="name" type="text" />
+        <label for="title">Title</label>
+        <input id="title" type="text" />
+        <label for="message">Message</label>
+        <textarea id="message" type="textarea"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </row>
+</section>
+
+  <footer id="footer" class="pt-4 pb-4 container">
     <p class="text-center">&copy; 2023 EL TIGRE inc.</p>
   </footer>
 
