@@ -10,10 +10,15 @@ export const select = {
     contact: '#contact',
     footer: '#footer',
     linksToPages: '#home, "products, #contact',
-    switchingPages: '#products, #contact',
+    mainPages: '#products, #contact',
     links: 'nav-links',
-    hidden: 'hidden',
   },
+};
+
+export const classNames = {
+  pages: {
+    active: 'active'
+  }
 };
 
 export const settings = {
