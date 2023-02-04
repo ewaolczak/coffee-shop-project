@@ -2,6 +2,11 @@ export const select = {
   templateOf: {
     product: '#template-product',
   },
+
+  containerOf: {
+    pages: '#pages',
+  },
+
   pages: {
     home: '#home',
     main: '#main',
@@ -15,9 +20,9 @@ export const select = {
   },
 };
 
-export const classList = {
+export const classNames = {
   pages: {
-    hidden: 'hidden',
+    active: 'active',
   },
 };
 

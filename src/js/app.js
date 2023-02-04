@@ -1,4 +1,4 @@
-import { select, settings, classList } from './settings.js';
+import { select, settings, classNames } from './settings.js';
 import utils from './functions.js';
 
 const templates = {
@@ -23,6 +23,9 @@ const app = {
 
     thisApp.dom = {};
     thisApp.dom.product = document.querySelector(select.templateOf.product);
+    thisApp.dom.pages = document.querySelector(
+      select.containerOf.pages
+    ).children;
     thisApp.dom.mainPages = document.querySelectorAll(select.pages.mainPages);
     thisApp.dom.pageLinks = document.querySelectorAll(select.pages.pageLinks);
     thisApp.dom.links = document.querySelectorAll(select.pages.links);
@@ -42,84 +45,59 @@ const app = {
     }
   },
 
-  initActivePage(pageId) {
+  initPages() {
     const thisApp = this;
 
-    for (let link of thisApp.dom.links) {
-      link.classList.add(classList.hidden);
-    }
+    const idFromHash = window.location.hash.replace('#', '');
 
-    for (let link of thisApp.dom.links) {
-      let pageAttributes = link.getAttribute('id');
-      if (pageAttributes == pageId) {
-        link.classList.remove(classList.hidden);
+    let pageMatchingHash = thisApp.dom.pages[0].id;
+
+    for (let page of thisApp.dom.pages) {
+      if (page.id == idFromHash) {
+        pageMatchingHash = page.id;
+        break;
       }
     }
-  },
 
-  initPageListener() {
-    const thisApp = this;
+    thisApp.activePage(pageMatchingHash);
 
-    for (let pageLink of thisApp.dom.pageLinks) {
-      pageLink.addEventListener('click', function (e) {
-        e.preventDefault();
-        const clickedElement = e.target.getAttribute('href').substring(1);
-        thisApp.initActivePage(clickedElement);
+    for (let link of thisApp.dom.links) {
+      link.addEventListener('click', function (event) {
+        const clickedElement = this;
+        event.preventDefault();
+
+        /* get page if from href attribute */
+        const id = clickedElement.getAttribute('href').replace('#', '');
+
+        /* run thisApp.activatePage with that id */
+        thisApp.activePage(id);
+
+        /* change URL hash */
+        window.location.hash = '#/' + id;
       });
     }
-
-    for (let pageLink of thisApp.dom.pageLinks) {
-      pageLink.classList.add(classList.hidden);
-    }
   },
 
-  // initPage() {
-  //   const thisApp = this;
-  //   const idFromHash = window.location.has.replace('#', '');
+  activePage(pageId) {
+    const thisApp = this;
 
-  //   let pageMatchingHash = thisApp.dom.mainPages[0].id;
+    for (let page of thisApp.dom.pages) {
+      page.classList.toggle(classNames.pages.active, page.id == pageId);
+    }
 
-  //   for (let mainPage of thisApp.dom.mainPages) {
-  //     if (mainPage.id === idFromHash) {
-  //       pageMatchingHash = mainPage.id;
-  //       break;
-  //     }
-  //   }
-
-  //   thisApp.activatePage(pageMatchingHash);
-
-  //   for (let link of thisApp.dom.linksToPages) {
-  //     link.addEventListener('click', function (e) {
-  //       e.prevenetDefault();
-  //       const clickedElement = this;
-
-  //       /* get page if from href attribute */
-  //       const id = clickedElement.getAttribute('href').replace('#', '');
-
-  //       /* run thisApp.activatePage with that id */
-  //       thisApp.activatePage(id);
-
-  //       /* change URL hash */
-  //       window.location.hash = '#' + id;
-  //     });
-  //   }
-  // },
-
-  // activatePage(pageId) {
-  //   const thisApp = this;
-
-  //   /* add class "active" to matching pages, remove from non-matching */
-  //   for (let mainPage of thisApp.dom.mainPages) {
-  //     mainPage.classList.toggle(classNames.pages.active, mainPage.id == pageId);
-  //   }
-  // },
+    for (let link of thisApp.dom.links) {
+      link.classList.toggle(
+        classNames.nav.active,
+        link.getAttribute('href') == '#' + pageId
+      );
+    }
+  },
 
   async init() {
     const thisApp = this;
     await thisApp.initData();
     thisApp.getElement();
-    // thisApp.initPage();
-    this.initPageListener();
+    thisApp.initPages();
   },
 };
 app.init();

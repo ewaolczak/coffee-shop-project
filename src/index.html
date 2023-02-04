@@ -61,25 +61,32 @@
   <main id="main" class="container">
     <h2 class="subtitle mt-5">products</h2>
     <hr class="main-hr">
-    <div id="products" class="products-list pt-5 pb-5"></div>
-    <section id="contact" class="contact">
-      <h2 class="subtitle mt-5">contact</h2>
-      <hr class="main-hr">
-      <div class="row container d-flex justify-content-between ms-auto me-auto pt-4">
-        <div class="col col-md-2"></div>
-        <div class="col col-md-8">
-          <form>
-            <label for="name">Name</label>
-            <input id="name" type="text">
-            <label for="title">Title</label>
-            <input id="title" type="text">
-            <label for="message">Message</label>
-            <textarea id="message" type="textarea"></textarea>
-            <button type="submit">Submit</button>
-          </form>
+
+    <div id="pages">
+      <section id="products">
+        <div class="products-list pt-5 pb-5"></div>
+      </section>
+
+      <section id="contact" class="contact hidden">
+        <h2 class="subtitle mt-5">contact</h2>
+        <hr class="main-hr">
+        <div class="row container d-flex justify-content-between ms-auto me-auto pt-4">
+          <div class="col col-md-2"></div>
+          <div class="col col-md-8">
+            <form>
+              <label for="name">Name</label>
+              <input id="name" type="text">
+              <label for="title">Title</label>
+              <input id="title" type="text">
+              <label for="message">Message</label>
+              <textarea id="message" type="textarea"></textarea>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="col col-md-2"></div>
         </div>
-        <div class="col col-md-2"></div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <section id="about" class="about">
