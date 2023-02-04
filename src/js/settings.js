@@ -9,16 +9,16 @@ export const select = {
     about: '#about',
     contact: '#contact',
     footer: '#footer',
-    linksToPages: '.nav-links a',
     mainPages: '#products, #contact',
-    links: 'nav-links',
+    linkPages: '#home, #products, #contact',
+    links: 'nav-links a',
   },
 };
 
-export const classNames = {
+export const classList = {
   pages: {
-    active: 'active'
-  }
+    hidden: 'hidden',
+  },
 };
 
 export const settings = {

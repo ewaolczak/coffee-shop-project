@@ -62,6 +62,24 @@
     <h2 class="subtitle mt-5">products</h2>
     <hr class="main-hr">
     <div id="products" class="products-list pt-5 pb-5"></div>
+    <section id="contact" class="contact">
+      <h2 class="subtitle mt-5">contact</h2>
+      <hr class="main-hr">
+      <div class="row container d-flex justify-content-between ms-auto me-auto pt-4">
+        <div class="col col-md-2"></div>
+        <div class="col col-md-8">
+          <form>
+            <label for="name">Name</label>
+            <input id="name" type="text">
+            <label for="title">Title</label>
+            <input id="title" type="text">
+            <label for="message">Message</label>
+            <textarea id="message" type="textarea"></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="col col-md-2"></div>
+    </section>
   </main>
 
   <section id="about" class="about">
@@ -71,7 +89,7 @@
       <hr class="main-hr">
     </div>
     <div class="row container d-flex justify-content-between ms-auto me-auto pt-4">
-      <div class="col col-md-2"></div>
+      <div class="col-md-2"></div>
       <div class="col col-md-8">
         <p>Who are we? Just a bunch of friends with
           a love for a good coffee and desire to create
@@ -84,32 +102,16 @@
     </div>
   </section>
 
-<section id="contact">
-  <row class="container">
-    <div class="col col-md-5 ms-auto me-auto">
-      <h2 class="subtitle mt-5">contact</h2>
-      <hr class="main-hr">
-      <form>
-        <label for="name">Name</label>
-        <input id="name" type="text" />
-        <label for="title">Title</label>
-        <input id="title" type="text" />
-        <label for="message">Message</label>
-        <textarea id="message" type="textarea"></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </row>
-</section>
+
 
   <footer id="footer" class="pt-4 pb-4 container">
     <p class="text-center">&copy; 2023 EL TIGRE inc.</p>
   </footer>
 
   <script id="template-product" type="text/x-handlebars-template">
-      <article class="products row d-flex mt-5">
+      <article class="products row mt-5">
         <div class="col-md-1"></div>
-        <div class="product-info col col-md-5 mt-4">
+        <div class="product-info col col-sm-5 mt-2 mt-md-4 ms-sm-auto me-sm-auto">
           <div>
               <h3 class="product__name no-spacing">{{ name }}</h3>
           </div>
@@ -122,12 +124,12 @@
             <p class="intensity">intensity: <span>{{intensity}}</span></p>
           </div>
         </div>
-        <div class="product-image col col-md-5">
+        <div class="product-image col col-sm-5">
           <figure>
             <img src="{{ image }}" alt="{{ name }}">
           </figure>
         </div>
-        <div class="col-lg-1"></div>
+        <div class="col-md-1"></div>
       </article>
     </script>
 

@@ -2,5 +2,9 @@
   color: $color-main;
   border: 6px solid $color-main;
   width: 500px;
-  margin: 15px auto;
+  margin: $base-size auto;
+}
+
+hr {
+  opacity: 1;
 }
