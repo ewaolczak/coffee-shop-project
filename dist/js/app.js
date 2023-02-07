@@ -101,7 +101,7 @@ const app = {
     await thisApp.initData();
     thisApp.getElement();
     thisApp.initPages();
-    console.log('initPages', thisApp.initPages());
+    console.log('initPages', thisApp.initPages);
   },
 };
 app.init();

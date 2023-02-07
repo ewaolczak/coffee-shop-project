@@ -48,7 +48,7 @@ const app = {
   initPages() {
     const thisApp = this;
 
-    const idFromHash = window.location.hash.replace('#/', '');
+    const idFromHash = window.location.hash.replace('#', '');
 
     let pageMatchingHash = thisApp.dom.pages[0].id;
 
