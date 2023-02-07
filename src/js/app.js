@@ -66,17 +66,15 @@ const app = {
         const clickedElement = this;
         event.preventDefault();
 
-        console.log('link', link);
-
         /* get page if from href attribute */
         const id = clickedElement.getAttribute('href').replace('#', '');
-        console.log('clickedElement', clickedElement);
+        // console.log('clickedElement', clickedElement);
 
         /* run thisApp.activatePage with that id */
         thisApp.activePage(id);
 
         /* change URL hash */
-        window.location.hash = '#/' + id;
+        window.location.hash = '#' + id;
       });
     }
   },
@@ -86,7 +84,10 @@ const app = {
 
     for (let page of thisApp.dom.pages) {
       page.classList.toggle(classNames.pages.hidden, page.id == pageId);
+      console.log('page.id', page.id);
+      console.log('pageId', pageId);
     }
+
 
     for (let link of thisApp.dom.links) {
       link.classList.toggle(
@@ -101,7 +102,7 @@ const app = {
     await thisApp.initData();
     thisApp.getElement();
     thisApp.initPages();
-    console.log('initPages', thisApp.initPages);
+    console.log('initPages', thisApp.initPages());
   },
 };
 app.init();
