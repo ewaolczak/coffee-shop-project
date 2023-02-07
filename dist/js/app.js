@@ -66,8 +66,11 @@ const app = {
         const clickedElement = this;
         event.preventDefault();
 
+        console.log('link', link);
+
         /* get page if from href attribute */
         const id = clickedElement.getAttribute('href').replace('#', '');
+        console.log('clickedElement', clickedElement);
 
         /* run thisApp.activatePage with that id */
         thisApp.activePage(id);
@@ -82,12 +85,12 @@ const app = {
     const thisApp = this;
 
     for (let page of thisApp.dom.pages) {
-      page.classList.toggle(classNames.pages.active, page.id == pageId);
+      page.classList.toggle(classNames.pages.hidden, page.id == pageId);
     }
 
     for (let link of thisApp.dom.links) {
       link.classList.toggle(
-        classNames.nav.active,
+        classNames.nav.hidden,
         link.getAttribute('href') == '#' + pageId
       );
     }
@@ -98,6 +101,7 @@ const app = {
     await thisApp.initData();
     thisApp.getElement();
     thisApp.initPages();
+    console.log('initPages', thisApp.initPages());
   },
 };
 app.init();

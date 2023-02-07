@@ -22,7 +22,7 @@ export const select = {
 
 export const classNames = {
   pages: {
-    active: 'active',
+    hidden: 'hidden',
   },
 };
 
