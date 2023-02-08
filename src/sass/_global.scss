@@ -19,3 +19,10 @@ body {
   filter: brightness(30%);
   z-index: -1;
 }
+
+section {
+  display: none;
+  &.active {
+    display: block;
+  }
+}

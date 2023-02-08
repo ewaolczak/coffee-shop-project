@@ -16,13 +16,13 @@ export const select = {
     footer: '#footer',
     mainPages: '#products, #contact',
     linkPages: '#home, #products, #contact',
-    links: 'nav-links a',
+    links: '.nav-links a',
   },
 };
 
 export const classNames = {
   pages: {
-    hidden: 'hidden',
+    active: 'active',
   },
 };
 
