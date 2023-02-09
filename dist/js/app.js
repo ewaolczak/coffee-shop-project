@@ -48,30 +48,16 @@ const app = {
   initPages() {
     const thisApp = this;
 
-    const idFromHash = window.location.hash.replace('#', '');
-
-    let pageMatchingHash = thisApp.dom.pages[0].id;
-
-    for (let page of thisApp.dom.pages) {
-      if (page.id == idFromHash) {
-        pageMatchingHash = page.id;
-        break;
-      }
-    }
-
-    thisApp.activePage(pageMatchingHash);
-
     for (let link of thisApp.dom.links) {
       link.addEventListener('click', function (event) {
-        const clickedElement = this;
         event.preventDefault();
+        const clickedElement = this;
 
         /* get page if from href attribute */
         const id = clickedElement.getAttribute('href').replace('#', '');
-        // console.log('clickedElement', clickedElement);
 
         /* run thisApp.activatePage with that id */
-        // thisApp.activePage(id);
+        thisApp.activePage(id);
 
         /* change URL hash */
         window.location.hash = '#' + id;
@@ -81,19 +67,9 @@ const app = {
 
   activePage(pageId) {
     const thisApp = this;
-
     for (let page of thisApp.dom.pages) {
-      page.classList.toggle(classNames.pages.hidden, page.id == pageId);
-      // console.log('page.id', page.id);
-      // console.log('pageId', pageId);
+      page.classList.toggle(classNames.pages.active, page.id == pageId);
     }
-
-    // for (let link of thisApp.dom.links) {
-    //   link.classList.toggle(
-    //     classNames.pages.active,
-    //     link.getAttribute('href') == '#' + pageId
-    //   );
-    // }
   },
 
   async init() {

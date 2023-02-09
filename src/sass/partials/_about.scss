@@ -11,8 +11,12 @@
     color: $color-light;
     font-size: $base-size * 2.5;
     font-style: italic;
-    padding-right: $base-size * 3;
+    // padding-right: $base-size * 3;
     letter-spacing: 1px;
+
+    @media (max-width: 540px) {
+    font-size: $base-size*2;
+    }
   }
 
   p:last-child {
